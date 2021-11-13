@@ -2,6 +2,7 @@ import React from 'react'
 import moment from 'moment'
 
 const assignmentsTable = (props) => {
+
     const printRow = () => {
         return props.opportunities.map( opp => {
             const shiftDefined = (opp.shift_start && opp.shift_end)
@@ -12,7 +13,7 @@ const assignmentsTable = (props) => {
             }
             return (
                 <tr>
-                    <td>{opp.contact_id}</td>
+                    {props.showContact ? <td>{opp.contact_id}</td> : null }
                     <td>{opp.event_title}</td>
                     <td>{moment(opp.event_start).format('ddd MMM Do h:mm a')} - {moment(opp.event_end).format('h:mm a')}</td>
                     <td>{opp.role.role}</td>
@@ -32,7 +33,7 @@ const assignmentsTable = (props) => {
         <table>
             <thead>
             <tr>
-                <th>Volunteer</th>
+                {props.showContact ? <th>Volunteer</th> : null}
                 <th>Event Name</th>
                 <th>Event Date</th>
                 <th>Role</th>
@@ -41,7 +42,7 @@ const assignmentsTable = (props) => {
                 <th>Credit Rate</th>
                 <th>Credit</th>
                 <th>Status</th>
-                <th>{props.action ? 'Button' : '' }</th>
+                <th>{props.action ? 'Action' : '' }</th>
             </tr>
             </thead>
 

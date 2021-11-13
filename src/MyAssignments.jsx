@@ -10,7 +10,6 @@ class MyAssignments extends Component {
             <div>
                 <h2>My Activity</h2>
                 <h3>Past Assignments</h3>
-                { console.log(pastAssignments, Date.now())}
                 <AssignmentsTable opportunities = {pastAssignments} />
                 <h3>Upcoming Assignments</h3>
                 <AssignmentsTable opportunities = {upcomingAssignments} action={'cancel'} cancelButton = {true} />

@@ -4,6 +4,7 @@ import MyAssignments from './MyAssignments'
 import AddOpportunity from './AddOpportunity/AddOpportunity';
 import NonVolunteer from './NonVolunteer'
 import {AJAX} from './shared/utility'
+import ManageAssignments from './ManageAssignments/ManageAssignments';
 
 class App extends React.Component {
   state = {
@@ -80,6 +81,7 @@ class App extends React.Component {
           <li>Add roles</li>
         </ul>
         <AddOpportunity />
+        <ManageAssignments opportunities={this.state.opportunities} />
 
         <h1>Admin</h1>
         <p>Assign/Remove Managers</p>
